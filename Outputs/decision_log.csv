@@ -1,0 +1,15 @@
+ID,Stage,Decision,Alternatives,Reason,Status
+DEC-001,Feasibility,Binary classification + probability output as FSI,"Regression, Clustering",UNOSAT provides clean binary ground-truth; probability enables continuous map,Final
+DEC-002,Study Area,"Lokoja Confluence, Kogi State, Nigeria","Lagos, Anambra, US FEMA basin",Oct 2022 disaster with verified UNOSAT labels; strong terrain variation; confluent rivers,Final
+DEC-003,Elevation,SRTM 30m (OpenTopography),"ALOS PALSAR 12.5m, ASTER 30m","Free, globally available, no authentication for small areas",Final
+DEC-004,Rainfall,CHIRPS v2.0 monthly (Sep+Oct 2022),"GPM IMERG, ERA5-Land",Finer resolution than GPM (5km vs 11km); no API auth required,Final
+DEC-005,River Network,HydroRIVERS Africa,DEM-derived streams only,Topologically verified; avoids broken channels from coarse DEM extraction,Final
+DEC-006,Land Cover,ESA WorldCover 2021 (10m),Raw Sentinel-2 classification,Pre-classified authoritative product; avoids raw imagery classification complexity,Final
+DEC-007,Flood Labels,UNOSAT FL20221019NGA VIIRS flood extent (Product 3427),"Sentinel-1 SAR (unverified local footprint), Government records (unavailable)",Official verified UNOSAT multi-day composite (1-25 Oct 2022); 375m VIIRS sensor; open access,Final
+DEC-008,CRS,UTM Zone 32N (EPSG:32632),WGS84 (EPSG:4326),"Metric CRS required for slope, Euclidean distance, and area accuracy",Final
+DEC-009,Resolution,90m master grid,"30m (too large for Colab RAM), 250m (too coarse)",Balances spatial detail with computation feasibility in Google Colab,Final
+DEC-010,Validation,Spatial block split (2×2 quadrant; SE = test),"Random split (spatial leakage), spatial k-fold (too complex)",Random split causes data leakage; k-fold too complex for beginner scope,Final
+DEC-011,Models,Logistic Regression + Random Forest,"XGBoost, SVM, Neural Network",Simplest interpretable pair; LR is linear baseline; RF handles non-linear thresholds,Final
+DEC-012,Final Model,Selected by highest ROC-AUC after Stage 14 evaluation,N/A,Evidence-based; prioritises flood recall across all probability thresholds,Completed in Stage 15
+DEC-013,Evaluation Metrics,Mandatory ROC-AUC and PR-AUC reporting,Accuracy alone (misleading under 98.4% dry imbalance),PR-AUC directly reflects positive-class precision and recall under extreme rarity,Final
+DEC-014,Baseline Benchmark,Naive majority-class classifier included in evaluation,No baseline,Essential to demonstrate performance gain over trivial all-dry prediction,Final
