@@ -1,0 +1,26 @@
+{
+  "project": "AI-Powered Flood Risk Prediction",
+  "study_area": "Lokoja Confluence, Kogi State, Nigeria",
+  "reference_event": "October 2022 Nigeria Flood",
+  "crs": "EPSG:32632",
+  "resolution_m": 90,
+  "bbox": {
+    "west": 6.4,
+    "east": 7.2,
+    "south": 7.4,
+    "north": 8.2
+  },
+  "features": [
+    "elevation",
+    "slope",
+    "rainfall",
+    "dist_river",
+    "permeability"
+  ],
+  "random_state": 42,
+  "final_model": "Logistic Regression",
+  "train_samples": 704123,
+  "test_samples": 242060,
+  "roc_auc_lr": 0.9924056284430567,
+  "roc_auc_rf": 0.941056799747164
+}
