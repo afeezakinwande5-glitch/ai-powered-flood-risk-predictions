@@ -1,0 +1,17 @@
+# TechCrush C8 — AI-Powered Flood Risk Prediction & Geospatial Intelligence System
+# Verified requirements for Pipeline & Streamlit Web Demonstration
+
+numpy>=1.26.0
+pandas>=2.0.0
+scikit-learn>=1.4.0
+scipy>=1.11.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+joblib>=1.3.0
+requests>=2.31.0
+shapely>=2.0.0
+rasterio>=1.3.0
+geopandas>=0.14.0
+pyproj>=3.6.0
+folium>=0.16.0
+streamlit>=1.35.0
